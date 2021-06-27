@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/selector_fragment">
+    <fragment
+        android:id="@+id/selector_fragment"
+        android:name="com.newland.opengl.ui.SelectorFragment"
+        android:label="selector">
+        <action android:id="@+id/action_renderer"
+            app:launchSingleTop="true"
+            app:destination="@id/renderer_fragment"
+            />
+    </fragment>
+    <fragment android:id="@+id/renderer_fragment"
+        android:name="com.newland.opengl.ui.RendererFragment"
+        android:label="renderer">
+        <argument android:name="flag"
+            app:argType="integer"
+            android:defaultValue="0"
+            />
+    </fragment>
+</navigation>
