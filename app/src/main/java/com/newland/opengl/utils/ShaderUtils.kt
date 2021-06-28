@@ -30,6 +30,9 @@ object ShaderUtils {
         }
     }
 
+    fun linkProgram(vertexShaderId: Int, fragmentShaderId: Int): Int =
+        likeProgram(vertexShaderId, fragmentShaderId)
+
     fun likeProgram(vertexShaderId: Int, fragmentShaderId: Int): Int {
         //创建一个空的OpenGLES程序
         val programId = GLES30.glCreateProgram()
