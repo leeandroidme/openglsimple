@@ -27,7 +27,7 @@ class RendererFragment : Fragment() {
             4 -> SimpleShapeRender()
             5 -> RectangleRenderer()
             6 -> ColorCubeRenderer()
-            6 -> EnableVertexRenderer()
+            7 -> EnableVertexRenderer()
             else -> null
         }?.also { it ->
             view.setRenderer(it)

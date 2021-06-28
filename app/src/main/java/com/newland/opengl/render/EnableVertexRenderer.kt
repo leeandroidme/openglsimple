@@ -13,7 +13,7 @@ import javax.microedition.khronos.opengles.GL10
 /**
  * @author: leellun
  * @data: 28/6/2021.
- *
+ * 纯色三角形
  */
 class EnableVertexRenderer : GLSurfaceView.Renderer {
 

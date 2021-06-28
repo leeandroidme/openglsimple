@@ -25,7 +25,7 @@ class SelectorFragment : Fragment() {
         view as RecyclerView
         view.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        val data = mutableListOf("纯色背景","繪製點、線、三角形","native","纯色三角形","四边形","立方体","sdf")
+        val data = mutableListOf("纯色背景","繪製點、線、三角形","native","纯色三角形","四边形","立方体","纯色三角形")
         val adapter = OpenGlAdapter(data)
         view.adapter = adapter
         adapter.setOnItemClickListener { adapter, view, position ->
