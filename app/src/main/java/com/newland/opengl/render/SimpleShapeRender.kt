@@ -15,7 +15,7 @@ import javax.microedition.khronos.opengles.GL10
 /**
  * @author: leellun
  * @data: 28/6/2021.
- *
+ * 普通三角形
  */
 class SimpleShapeRender : GLSurfaceView.Renderer {
     companion object {

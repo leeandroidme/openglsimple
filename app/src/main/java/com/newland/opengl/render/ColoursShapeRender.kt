@@ -12,6 +12,9 @@ import java.nio.FloatBuffer
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
+/**
+ * 点、线、三角形
+ */
 class ColoursShapeRender : GLSurfaceView.Renderer {
     companion object {
         //一个Float占用4Byte

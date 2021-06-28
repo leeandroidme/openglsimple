@@ -28,6 +28,14 @@ class RendererFragment : Fragment() {
             5 -> RectangleRenderer()
             6 -> ColorCubeRenderer()
             7 -> EnableVertexRenderer()
+            8 -> IndicesCubeRenderer()
+            9 -> LineCubeRenderer()
+            10 -> MapBufferRenderer()
+            11 -> RectangleWRenderer()
+            12 -> UniformRenderer()
+            13 -> VertexArrayRenderer()
+            14 -> VertexPointerRenderer()
+            15 -> VertexBufferRenderer()
             else -> null
         }?.also { it ->
             view.setRenderer(it)
