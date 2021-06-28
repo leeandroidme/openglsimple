@@ -25,13 +25,15 @@ class SelectorFragment : Fragment() {
         view as RecyclerView
         view.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        val data = mutableListOf("纯色背景")
+        val data = mutableListOf("纯色背景","繪製點、線、三角形")
         val adapter = OpenGlAdapter(data)
         view.adapter = adapter
         adapter.setOnItemClickListener { adapter, view, position ->
             when (position) {
                 0 -> Navigation.findNavController(requireActivity(), R.id.fragmentContainer)
                     .navigate(SelectorFragmentDirections.actionRenderer(OpenGLConstant.BACKGROUND))
+                1 -> Navigation.findNavController(requireActivity(), R.id.fragmentContainer)
+                    .navigate(SelectorFragmentDirections.actionRenderer(2))
             }
         }
     }
