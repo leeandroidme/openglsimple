@@ -60,6 +60,7 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
 
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
+
         //背景设置为白色
         GLES30.glClearColor(1f, 1f, 1f, 1f)
         var vertexShaderStr =
@@ -88,21 +89,22 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
         GLES30.glEnableVertexAttribArray(0)
 
         //准备颜色数据
-        GLES30.glVertexAttribPointer(1, 4, GLES30.GL_FLOAT, false, 0, colorBuffer)
+        GLES30.glVertexAttribPointer(2, 4, GLES30.GL_FLOAT, false, 0, colorBuffer)
         //启用顶点颜色句柄
-        GLES30.glEnableVertexAttribArray(1)
+        GLES30.glEnableVertexAttribArray(2)
 
         //绘制三个点
-//        GLES30.glDrawArrays(GLES30.GL_POINTS, 0, POSITION_COMPONENT_COUNT)
+        GLES30.glDrawArrays(GLES30.GL_TRIANGLE_STRIP, 0, POSITION_COMPONENT_COUNT)
         //线宽
         GLES30.glLineWidth(3F)
         //绘制三条线
         GLES30.glDrawArrays(GLES30.GL_LINE_LOOP, 0, POSITION_COMPONENT_COUNT)
         //绘制三角形
-//        GLES30.glDrawArrays(GLES30.GL_TRIANGLES, 0, POSITION_COMPONENT_COUNT)
+        GLES30.glDrawArrays(GLES30.GL_TRIANGLES, 0, POSITION_COMPONENT_COUNT)
+
         //禁止顶点数组的句柄
         GLES30.glDisableVertexAttribArray(0)
-        GLES30.glDisableVertexAttribArray(1)
+        GLES30.glDisableVertexAttribArray(2)
     }
 }
 

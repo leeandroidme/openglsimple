@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.newland.opengl.render.BackgroundNativeRenderer
 import com.newland.opengl.render.BackgroundRender
 import com.newland.opengl.render.SimpleShapeRender
 
@@ -24,6 +25,7 @@ class RendererFragment : Fragment() {
         when (args.flag) {
             1 -> BackgroundRender()
             2 -> SimpleShapeRender()
+            3 -> BackgroundNativeRenderer()
             else -> null
         }?.also { it ->
             view.setRenderer(it)
