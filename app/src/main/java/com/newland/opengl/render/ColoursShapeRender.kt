@@ -12,12 +12,7 @@ import java.nio.FloatBuffer
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
-/**
- * @author: leellun
- * @data: 28/6/2021.
- *
- */
-class SimpleShapeRender : GLSurfaceView.Renderer {
+class ColoursShapeRender : GLSurfaceView.Renderer {
     companion object {
         //一个Float占用4Byte
         private const val BYTES_PRE_FLOAT = 4
@@ -27,10 +22,10 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
     }
 
     //顶点位置缓存
-    private var vertexButter: FloatBuffer
+    private lateinit var vertexButter: FloatBuffer
 
     //顶点颜色缓存
-    private var colorBuffer: FloatBuffer
+    private lateinit var colorBuffer: FloatBuffer
 
     //渲染程序
     private var mProgram: Int = -1
@@ -44,7 +39,9 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
 
     //三个顶点的颜色参数
     private val colorCoords = floatArrayOf(
-        1f, 0f, 0f, 1f
+        1f, 0f, 0f, 1f,//top
+        0f, 1f, 0f, 1f,//bottom left
+        0f, 0f, 1f, 1f//bottom right
     )
 
     init {
@@ -64,8 +61,8 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
 
-        //设置背景颜色
-        GLES30.glClearColor(0.5f, 0.5f, 0.5f, 0.5f)
+        //背景设置为白色
+        GLES30.glClearColor(1f, 1f, 1f, 1f)
         var vertexShaderStr =
             ResourceUtils.readResource(OpenGlApplication.application, R.raw.vertex_simple_shade)
         //编译顶点着色程序
@@ -110,3 +107,30 @@ class SimpleShapeRender : GLSurfaceView.Renderer {
         GLES30.glDisableVertexAttribArray(1)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
