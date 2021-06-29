@@ -12,14 +12,19 @@ object ShaderUtils {
         //創建着色器
         val shaderId = GLES30.glCreateShader(type)
         if (shaderId != 0) {
+            //
             GLES30.glShaderSource(shaderId, shaderCode)
             GLES30.glCompileShader(shaderId)
             //检测状态
             val compileStatus = IntArray(1)
             GLES30.glGetShaderiv(shaderId, GLES30.GL_COMPILE_STATUS, compileStatus, 0)
             if (compileStatus[0] == 0) {
-                var loginfo = GLES30.glGetShaderInfoLog(shaderId)
-                Log.e("logoinfo", loginfo)
+                val infoLen = IntArray(1)
+                GLES30.glGetShaderiv(shaderId, GLES30.GL_INFO_LOG_LENGTH, infoLen, 0)
+                if (infoLen[0] > 0) {
+                    var loginfo = GLES30.glGetShaderInfoLog(shaderId)
+                    Log.e("logoinfo", loginfo)
+                }
                 //检测失败
                 GLES30.glDeleteShader(shaderId)
                 return 0
@@ -47,8 +52,12 @@ object ShaderUtils {
             val linkStatus = IntArray(1)
             GLES30.glGetProgramiv(programId, GLES30.GL_LINK_STATUS, linkStatus, 0)
             if (linkStatus[0] == 0) {
-                val logInfo = GLES30.glGetProgramInfoLog(programId)
-                Log.e("logoinfo", logInfo)
+                val infoLen = IntArray(1)
+                GLES30.glGetProgramiv(programId, GLES30.GL_INFO_LOG_LENGTH, infoLen, 0)
+                if (infoLen[0] > 0) {
+                    val logInfo = GLES30.glGetProgramInfoLog(programId)
+                    Log.e("logoinfo", logInfo)
+                }
                 GLES30.glDeleteProgram(programId)
                 return 0
             }
