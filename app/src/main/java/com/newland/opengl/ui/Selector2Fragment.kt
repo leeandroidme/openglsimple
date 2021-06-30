@@ -27,6 +27,8 @@ class Selector2Fragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val data = mutableListOf(
             "三角形",
+            "纹理图片",
+            "纹理图片2",
             )
             val adapter = OpenGlAdapter(data)
             view.adapter = adapter

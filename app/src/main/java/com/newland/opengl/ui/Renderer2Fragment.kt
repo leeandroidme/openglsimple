@@ -25,6 +25,8 @@ class Renderer2Fragment : Fragment() {
         view.setEGLContextClientVersion(3)
         when (args.flag) {
             1 -> TriangleRenderer()
+            2 -> TextureRender()
+            3 -> TextureRender2()
             else -> null
         }?.also { it ->
             view.setRenderer(it)
