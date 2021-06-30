@@ -2,13 +2,12 @@ package com.newland.opengl.render
 
 import android.opengl.GLES30
 import android.opengl.GLSurfaceView
+import com.newland.common.OpenBaseApplication
+import com.newland.common.utils.ShaderUtils
 import com.newland.opengl.R
-import com.newland.opengl.app.OpenGlApplication
 import com.newland.opengl.utils.ResourceUtils
-import com.newland.opengl.utils.ShaderUtils
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-import java.nio.FloatBuffer
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
@@ -133,14 +132,14 @@ class ColorCubeRenderer : GLSurfaceView.Renderer {
         val vertexShaderId: Int =
             ShaderUtils.compileVertexShader(
                 ResourceUtils.readResource(
-                    OpenGlApplication.application,
+                    OpenBaseApplication.application,
                     R.raw.vertex_colorcube_shader
                 )
             )
         val fragmentShaderId: Int =
             ShaderUtils.compileFragmentShader(
                 ResourceUtils.readResource(
-                    OpenGlApplication.application,
+                    OpenBaseApplication.application,
                     R.raw.fragment_colorcube_shader
                 )
             )

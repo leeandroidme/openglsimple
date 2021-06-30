@@ -4,7 +4,7 @@ import android.opengl.GLES30
 import android.opengl.GLSurfaceView
 import com.newland.opengl.R
 import com.newland.opengl.utils.ResourceUtils
-import com.newland.opengl.utils.ShaderUtils
+import com.newland.common.utils.ShaderUtils
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import javax.microedition.khronos.egl.EGLConfig

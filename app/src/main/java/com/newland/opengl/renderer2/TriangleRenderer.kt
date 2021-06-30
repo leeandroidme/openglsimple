@@ -3,7 +3,7 @@ package com.newland.opengl.renderer2
 import android.opengl.GLES30
 import android.opengl.GLSurfaceView
 import com.newland.opengl.common.IRendererLife
-import com.newland.opengl.utils.ShaderUtils
+import com.newland.common.utils.ShaderUtils
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer

@@ -1,2 +1,4 @@
 rootProject.name = "openglsimple"
 include ':app'
+include ':common-core'
+include ':demo1'

@@ -1,11 +1,9 @@
 package com.newland.opengl.utils
 
 import android.content.Context
-import android.provider.OpenableColumns
 import com.newland.opengl.app.OpenGlApplication
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.Exception
 
 object ResourceUtils {
     fun readResource(resourceId: Int): String =

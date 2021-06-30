@@ -44,7 +44,7 @@ class SelectorFragment : Fragment() {
         )
         val adapter = OpenGlAdapter(data)
         view.adapter = adapter
-        adapter.setOnItemClickListener { adapter, view, position ->
+        adapter.setOnItemClickListener { _, _, position ->
             Navigation.findNavController(requireActivity(), R.id.fragmentContainer)
                 .navigate(SelectorFragmentDirections.actionRenderer(position + 1))
         }

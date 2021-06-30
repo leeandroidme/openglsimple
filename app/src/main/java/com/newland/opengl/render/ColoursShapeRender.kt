@@ -2,10 +2,10 @@ package com.newland.opengl.render
 
 import android.opengl.GLES30
 import android.opengl.GLSurfaceView
+import com.newland.common.OpenBaseApplication
 import com.newland.opengl.R
-import com.newland.opengl.app.OpenGlApplication
 import com.newland.opengl.utils.ResourceUtils
-import com.newland.opengl.utils.ShaderUtils
+import com.newland.common.utils.ShaderUtils
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer
@@ -67,11 +67,11 @@ class ColoursShapeRender : GLSurfaceView.Renderer {
         //背景设置为白色
         GLES30.glClearColor(1f, 1f, 1f, 1f)
         var vertexShaderStr =
-            ResourceUtils.readResource(OpenGlApplication.application, R.raw.vertex_simple_shade)
+            ResourceUtils.readResource(OpenBaseApplication.application, R.raw.vertex_simple_shade)
         //编译顶点着色程序
         var vertexShaderId = ShaderUtils.compileVertexShader(vertexShaderStr)
         var fragmentShaderStr =
-            ResourceUtils.readResource(OpenGlApplication.application, R.raw.fragment_simple_shade)
+            ResourceUtils.readResource(OpenBaseApplication.application, R.raw.fragment_simple_shade)
         //编译片段着色程序
         var fragmentShaderId = ShaderUtils.compileFragmentShader(fragmentShaderStr)
         mProgram = ShaderUtils.likeProgram(vertexShaderId, fragmentShaderId)

@@ -3,10 +3,10 @@ package com.newland.opengl.render
 import android.opengl.GLES30
 import android.opengl.GLSurfaceView
 import android.opengl.Matrix
+import com.newland.common.OpenBaseApplication
+import com.newland.common.utils.ShaderUtils
 import com.newland.opengl.R
-import com.newland.opengl.app.OpenGlApplication
 import com.newland.opengl.utils.ResourceUtils
-import com.newland.opengl.utils.ShaderUtils
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer
@@ -55,12 +55,12 @@ class RectangleRenderer : GLSurfaceView.Renderer {
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
         GLES30.glClearColor(0.5f, 0.5f, 0.5f, 0.5f)
         var vertexShaderStr =
-            ResourceUtils.readResource(OpenGlApplication.application, R.raw.rectangle_vertex_shade)
+            ResourceUtils.readResource(OpenBaseApplication.application, R.raw.rectangle_vertex_shade)
         //编译顶点着色程序
         var vertexShaderId = ShaderUtils.compileVertexShader(vertexShaderStr)
         var fragmentShaderStr =
             ResourceUtils.readResource(
-                OpenGlApplication.application,
+                OpenBaseApplication.application,
                 R.raw.rectangle_fragment_shade
             )
         //编译片段着色程序

@@ -5,7 +5,7 @@ import android.opengl.GLSurfaceView
 import android.util.Log
 import com.newland.opengl.R
 import com.newland.opengl.utils.ResourceUtils
-import com.newland.opengl.utils.ShaderUtils
+import com.newland.common.utils.ShaderUtils
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
