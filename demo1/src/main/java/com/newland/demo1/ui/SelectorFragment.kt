@@ -25,7 +25,9 @@ class SelectorFragment : Fragment() {
         view.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val data = mutableListOf(
-            "纯色背景",
+            "动态颜色画形状",
+            "提前设置颜色画形状",
+            "3D",
         )
         val adapter = OpenGlAdapter(data)
         view.adapter = adapter

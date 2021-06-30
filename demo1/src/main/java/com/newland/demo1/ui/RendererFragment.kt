@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.newland.demo1.renderer.AirHockeyRenderer
+import com.newland.demo1.renderer.Triangles3DRenderer
+import com.newland.demo1.renderer.TrianglesRenderer
+import com.newland.demo1.renderer.TrianglesRenderer2
 
 class RendererFragment : Fragment() {
     private val args: RendererFragmentArgs by navArgs()
@@ -21,7 +23,9 @@ class RendererFragment : Fragment() {
         view as GLSurfaceView
         view.setEGLContextClientVersion(3)
         when (args.flag) {
-            1 -> AirHockeyRenderer()
+            1 -> TrianglesRenderer()
+            2 -> TrianglesRenderer2()
+            3 -> Triangles3DRenderer()
             else -> null
         }?.also { it ->
             view.setRenderer(it)
