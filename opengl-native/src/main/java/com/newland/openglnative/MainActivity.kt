@@ -1,11 +1,11 @@
-package com.newland.demo1
+package com.newland.openglnative
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Demo1MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_demo1_main)
+        setContentView(R.layout.activity_main)
     }
 }

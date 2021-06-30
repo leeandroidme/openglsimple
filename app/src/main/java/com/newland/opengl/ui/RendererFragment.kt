@@ -23,7 +23,7 @@ class RendererFragment : Fragment() {
         when (args.flag) {
             1 -> BackgroundRender()
             2 -> ColoursShapeRender()
-            3 -> BackgroundNativeRenderer()
+            3 -> SimpleShapeRender()
             4 -> SimpleShapeRender()
             5 -> RectangleRenderer()
             6 -> ColorCubeRenderer()
